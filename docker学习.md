@@ -115,7 +115,7 @@ docker restart 'CONTAINER ID'; 重新启动镜像生效
 
 8. 大功告成。
 
-   ![1562225194277](C:\Users\huang\AppData\Roaming\Typora\typora-user-images\1562225194277.png)
+   ![1562225194277](https://github.com/braveblack/brave-js/blob/master/1562225194277.png)
 
 
 
