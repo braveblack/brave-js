@@ -39,5 +39,23 @@ git push [remote] [branch]：上传本地指定分支到远程仓库
 使用curl发送POST请求：curl -d "args" protocol://address:port/url
 
 检查端口是否被占用： lsof -i:8080 
+
 ```
 
+##### oracle:
+
+1. 查询锁表
+
+```
+select SESS.sid, SESS.SERIAL#, LO.ORACLE_USERNAME, LO.OS_USER_NAME,
+      AO.OBJECT_NAME, LO.LOCKED_MODE
+from V$LOCKED_OBJECT LO, DBA_OBJECTs AO, V$SESSION SESS
+where AO.OBJECT_ID = LO.OBJECT_ID 
+and lo.session_id = sess.sid;
+```
+
+2. 释放锁
+
+   ```
+   alter system kill session 'sid,serial#'; //sid,serial#是上面查询出来的
+   ```
